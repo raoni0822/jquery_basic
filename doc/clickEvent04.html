@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click 01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <!-- {css -->
+    <style>
+        .con>li {
+            display: none;
+        }
+
+        .con>li.on {
+            display: block;
+        }
+    </style>
+    <!-- css} -->
+</head>
+
+<body>
+    <!-- {html -->
+    <section class="tab">
+        <ul class="menu">
+            <li class="on"><button>menu01</button></li>
+            <li><button>menu02</button></li>
+            <li><button>menu03</button></li>
+        </ul>
+        <ul class="con">
+            <li class="on">01 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, incidunt.</li>
+            <li>02 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, incidunt.</li>
+            <li>03 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, incidunt.</li>
+        </ul>
+    </section>
+    <!-- html} -->
+
+
+
+    <!-- {jquery -->
+    <script>
+        $(function () {
+            $('.menu>li').on('click', function () {
+                console.log($(this).index()); // 0,1,2
+                var idx = $(this).index();
+                $('.con>li').removeClass('on')
+                $('.con>li').eq(idx).addClass('on');
+            })
+        })
+
+
+    </script>
+    <!-- jquery} -->
+</body>
+
+</html>
