@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>slick01 - 신세계 multi slide</title>
+    <title>slick01 - mainVisual slide 배경으로 만들기</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="../css/slick.css">
@@ -14,95 +14,53 @@
     <style></style>
     <!-- {css -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
-
-
-        * {
-            outline: 1px solid #363;
+        /* slide가 3개 일 때, 반짝이는 거 제거 */
+        .slick-list,
+        .slick-track {
+            transition-delay: 0.03s;
         }
 
-        .mz {
-            font-family: 'Noto Serif KR', serif;
+        .slick01 {
+            position: relative;
         }
 
-        .Art {
-            padding: 200px 0 100px 0;
-            overflow: hidden;
-        }
-
-        .Art h2 {
-            font-size: 40px;
-            font-weight: 600;
-            text-align: center;
-            margin: 0 0 50px 0;
-        }
-
-        .Art .inner {
-            width: 1200px;
-            height: 350px;
+        .itm {
+            height: 100vh;
 
         }
 
-        .Art .left_tab {
+        .itm01 {
+            background: url(../img/main_visual01.jpg) no-repeat center center/cover;
+        }
+
+        .itm02 {
+            background: url(../img/main_visual02.jpg) no-repeat center center/cover;
+        }
+
+        .itm03 {
+            background: url(../img/main_visual03.jpg) no-repeat center center/cover;
+        }
+
+        .slogan {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 1200px;
+            z-index: 999;
         }
 
-        .Art .left_tab span {
-            display: block;
-            font-size: 14px;
+        .slogan h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            color: #fff;
+            text-shadow: 0 0 1px #000;
+        }
+
+        .slogan P {
+            font-size: 15px;
             font-weight: 300;
-            margin: 0 0 30px 0;
-            color: #e0c799;
-        }
-
-        .Art .left_tab .tit {
-            font-size: 30px;
-            font-weight: 600;
-            font-family: 'Noto Serif KR', serif;
-            color: #fff;
-            line-height: 40px;
-        }
-
-        .Art .left_tab a {
-            display: inline-block;
-            padding: 7px 15px;
-            color: #fff;
-            border: 1px solid #fff;
-            font-size: 12px;
-        }
-
-        .Art .left_tab .itm {
-            display: none;
-        }
-
-        .Art .left_tab .itm.on {
-            display: block;
-        }
-
-        .art_content_wrap {
-            position: relative;
-        }
-
-        .Art .right_slide {
-            position: absolute;
-            top: 60px;
-            right: -150px;
-            width: 1200px;
-        }
-
-        .Art .right_slide figure {
-            padding: 0 15px;
-        }
-
-        .arrows {
-            color: #fff;
-        }
-
-        .num {
             color: #fff;
         }
     </style>
@@ -111,79 +69,17 @@
 
 <body>
     <!-- {html -->
-    <section class="Art">
-        <h2 class="mz">Art &amp; Culture</h2>
+    <section class="slick01">
+        <!-- 문구를 띄울 때는 좌표를 잡기 위해 같이 묶어 놓는다 -->
+        <div class="slogan">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, quaerat.</p>
+        </div>
 
-        <div class="art_content_wrap">
-            <div class="inner">
-                <div class="left_tab">
-                    <div class="itm on">
-                        <span>01 SHINSEGAE ACADEMY</span>
-                        <div class="tit">
-                            신세계 아카데미<br />
-                            겨울학기 수강회원 모집
-                        </div>
-                        <a href="">VIEW MORE</a>
-                    </div>
-                    <div class="itm">
-                        <span>02 SHINSEGAE ACADEMY</span>
-                        <div class="tit">
-                            신세계 아카데미<br />
-                            겨울학기 수강회원 모집
-                        </div>
-                        <a href="">VIEW MORE</a>
-                    </div>
-                    <div class="itm">
-                        <span>03 SHINSEGAE ACADEMY</span>
-                        <div class="tit">
-                            신세계 아카데미<br />
-                            겨울학기 수강회원 모집
-                        </div>
-                        <a href="">VIEW MORE</a>
-                    </div>
-                    <div class="itm">
-                        <span>04 SHINSEGAE ACADEMY</span>
-                        <div class="tit">
-                            신세계 아카데미<br />
-                            겨울학기 수강회원 모집
-                        </div>
-                        <a href="">VIEW MORE</a>
-                    </div>
-                    <div class="itm">
-                        <span>05 SHINSEGAE ACADEMY</span>
-                        <div class="tit">
-                            신세계 아카데미<br />
-                            겨울학기 수강회원 모집
-                        </div>
-                        <a href="">VIEW MORE</a>
-                    </div>
-
-                </div>
-                <div class="arrows">
-                    <i class="xi-angle-left"></i>
-                    <i class="xi-angle-right"></i>
-                </div>
-                <div class="num">
-
-                </div>
-            </div>
-            <div class="right_slide">
-                <figure>
-                    <img src="../img/main_con02.jpg" alt="">
-                </figure>
-                <figure>
-                    <img src="../img/main_con03.jpg" alt="">
-                </figure>
-                <figure>
-                    <img src="../img/main_con04.jpg" alt="">
-                </figure>
-                <figure>
-                    <img src="../img/main_con05.jpg" alt="">
-                </figure>
-                <figure>
-                    <img src="../img/main_con06.jpg" alt="">
-                </figure>
-            </div>
+        <div class="mainSlide">
+            <div class="itm itm01"></div>
+            <div class="itm itm02"></div>
+            <div class="itm itm03"></div>
         </div>
     </section>
     <!-- html} -->
@@ -193,31 +89,8 @@
     <!-- {jquery -->
     <script>
         $(function () {
-            var bgColor = ['#207844', '#41437b', '#9b3440', '#844141', '#7f7f7f']
-            $('.Art .inner').css({ background: bgColor[0] })
-
-            $('.right_slide').on('init afterChange', function (e, s, c) {
-                console.log(c);
-                // $('.Art .left_tab .itm').removeClass('on');
-                $('.Art .left_tab .itm').eq(c).addClass('on').siblings().removeClass('on');
-
-                $('.Art .inner').css({ background: bgColor[c] })
-                $('.num').text((c ? c + 1 : 1) + '/' + bgColor.length);
-
-            })
-
-            $('.right_slide').slick({
-                slidesToShow: 2,
+            $('.mainSlide').slick({
                 arrows: false,
-                autoplay: true,
-            })
-
-            $('.arrows i:nth-child(1)').on('click', function () {
-                $('.right_slide').slick('slickPrev')
-            })
-
-            $('.arrows i:nth-child(2)').on('click', function () {
-                $('.right_slide').slick('slickNext')
             })
 
         })

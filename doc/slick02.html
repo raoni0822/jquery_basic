@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick02 - 쇼핑몰 대량 slick</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <style></style>
+    <!-- {css -->
+    <style>
+        /* slide가 3개 일 때, 반짝이는 거 제거 */
+        .slick-list,
+        .slick-track {
+            transition-delay: 0.03s;
+        }
+
+        .product {
+            padding: 100px 0;
+        }
+
+        .product h2 {
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 10px 0;
+        }
+
+        .product p {
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            margin: 0 0 40px 0;
+        }
+
+        .product .inner {
+            width: 1500px;
+            margin: 0 auto;
+        }
+
+        .pro_list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+        }
+
+        .pro_list .itm {
+            overflow: hidden;
+        }
+
+        .pro_slide {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .pro_slide .slick-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+
+        }
+
+        .pro_slide .slick-dots li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: tomato;
+            border-radius: 50%;
+            margin: 0 2px;
+        }
+
+        .pro_slide .slick-dots li.slick-active {
+            background: #ff0;
+        }
+
+        .pro_slide .slick-dots li button {
+            display: none;
+        }
+
+        .pro_slide .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: 999;
+
+            font-size: 0;
+
+            background: transparent;
+            border: none;
+            outline: none;
+
+            width: 30px;
+            height: 30px;
+
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+
+        .pro_slide .slick-prev {
+            transform: translate(0, -50%) rotate(-45deg);
+            left: 15px;
+        }
+
+        .pro_slide .slick-next {
+            transform: translate(0, -50%) rotate(135deg);
+            right: 15px;
+        }
+    </style>
+    <!-- css} -->
+</head>
+
+<body>
+    <!-- {html -->
+    <section class="product">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, totam!</p>
+        <div class="inner pro_list">
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+            <div class="itm">
+                <div class="box pro_slide">
+                    <figure>
+                        <img src="../img/main_con02.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con03.jpg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="../img/main_con04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="id">이름01</div>
+                <div class="pri">30000</div>
+                <a href="">구매하기</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- html} -->
+
+
+
+    <!-- {jquery -->
+    <script>
+        $(function () {
+            $('.pro_slide').slick({
+                dots: true,
+            })
+
+        })
+
+
+    </script>
+    <!-- jquery} -->
+</body>
+
+</html>
