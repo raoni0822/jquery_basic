@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullpage 만들어쓰기</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <style>
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .gbg {
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <section class="section gbg fp01">01</section>
+        <section class="section fp02">02</section>
+        <section class="section gbg fp03">03</section>
+        <section class="section fp04">04</section>
+        <section class="section gbg fp05">05</section>
+    </div>
+
+
+    <script>
+        const section = document.querySelectorAll('.section');
+        const body = document.querySelector('body, html')
+        function wheelEvent(e) {
+            let delta = e.deltaY;
+            // let tg = e.currentTarget;
+
+            let _thisPrev = this.previousElementSibling;
+            let _thisNext = this.nextElementSibling;
+            // console.log(this, body, _this);
+            if (delta < 0 && _thisPrev) {
+                body.scrollTo({ top: _thisPrev.offsetTop, behavior: 'smooth' });
+                this.classList.remove('on');
+                _thisPrev.classList.add('on');
+                return;
+            }
+            if (delta > 0 && _thisNext) {
+                body.scrollTo({ top: _thisNext.offsetTop, behavior: 'smooth' });
+                this.classList.remove('on');
+                _thisNext.classList.add('on');
+                return;
+            }
+        }
+        // section.addEventListener('wheel', wheelEvent);
+
+        section.forEach((it, idx) => {
+            it.addEventListener('wheel', wheelEvent)
+        })
+    </script>
+</body>
+
+</html>

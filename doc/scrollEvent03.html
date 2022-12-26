@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scrollEvent02 - scroll에 따라 슬라이드, 애니메이션 주기</title>
+    <title>scrollEvent03 - 연속 scrollevent</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/font.css">
     <script src="../js/jquery-1.12.4.min.js"></script>
     <style>
+        * {
+            outline: 1px solid #363;
+        }
+
         section {
             display: flex;
             justify-content: center;
@@ -27,13 +31,13 @@
 
         .content h2 {
             opacity: 0;
-            transform: translate(0, 200px);
+            transform: translate(0, 10px);
         }
 
         .content.on h2 {
             opacity: 1;
             transform: translate(0, 0);
-            transition: 1s 1s;
+            transition: 0.5s 0.1s;
         }
 
         .content .otb {
@@ -64,26 +68,32 @@
     </section>
     <section class="content">
         <h2>나는 h2</h2>
-        <div class="otb">
-
-        </div>
+        <div class="otb"></div>
+    </section>
+    <section class="content">
+        <h2>나는 h2</h2>
+        <div class="otb"></div>
+    </section>
+    <section class="content">
+        <h2>나는 h2</h2>
+        <div class="otb"></div>
     </section>
 
 
     <script>
         $(function () {
 
-            var conP = $('.content').offset().top;
-            // console.log(conP)
-
             $(window).on('scroll', function () {
                 var sct = $(window).scrollTop();
-                console.log(sct, conP);
-                if (sct > conP - 200) {
-                    $('.content').addClass('on')
-                } else {
-                    $('.content').removeClass('on')
-                }
+                $('.content').each(function () {
+                    var _thisTOP = $(this).offset().top;
+                    console.log(_thisTOP);
+                    if (sct > _thisTOP - 200) {
+                        $(this).addClass('on')
+                    } else {
+                        $(this).removeClass('on')
+                    }
+                })
             })
         })
     </script>

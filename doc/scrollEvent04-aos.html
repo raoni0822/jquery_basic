@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollEvent04 - scroll에 따라 슬라이드, 애니메이션 주기</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <style>
+        * {
+            outline: 1px solid #363;
+        }
+
+        .main {
+            height: 100vh;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        section:nth-child(even) {
+            background: #ddd;
+        }
+
+        .content {
+            position: relative;
+        }
+
+        .content .inner {
+            display: flex;
+            gap: 30px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <h2>나는 main</h2>
+    </section>
+    <section class="content">
+        <h2>나는 h2</h2>
+        <div class="inner">
+            <figure data-aos="fade-up" data-aos-delay="300">
+                <img src="../img/main_con02.jpg" alt="">
+            </figure>
+            <figure data-aos="fade-up" data-aos-delay="600">
+                <img src="../img/main_con03.jpg" alt="">
+            </figure>
+            <figure data-aos="fade-up" data-aos-delay="900">
+                <img src="../img/main_con04.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+
+    <script>
+        $(function () {
+            AOS.init();
+
+        })
+    </script>
+</body>
+
+</html>
